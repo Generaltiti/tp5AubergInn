@@ -11,6 +11,8 @@
     <title>Membre</title>
 </head>
 <body>
+
+<h1>Créer un client</h1>
     <form method="POST" action="/tp5_war_exploded/CreerClient">
         <div class="form-group">
             <label for="idClient">Id du client</label>
@@ -31,6 +33,40 @@
         <input class="btn btn-primary" type="SUBMIT" name="inscrire" value="Créer le client">
     </form>
 
+<br>
+<br>
+<h1>Supprimer un client</h1>
+    <form method="POST" action="/tp5_war_exploded/SupprimerClient">
+        <div class="form-group">
+            <label for="idClient">Id du client</label>
+            <input class="form-control" type="TEXT" name="idClient" value="<%= request.getAttribute("idClient") != null ? (String)request.getAttribute("idClient") : "" %>">
+        </div>
+
+        <input class="btn btn-primary" type="SUBMIT" name="inscrire" value="Effacer le client">
+    </form>
+
+    <br>
+    <br>
+<h1>Réserver une chambre</h1>
+<form method="POST" action="/tp5_war_exploded/Reserver">
+    <div class="form-group">
+        <label for="idClient">Id du client</label>
+        <input class="form-control" type="TEXT" name="idClient" value="<%= request.getAttribute("idClient") != null ? (String)request.getAttribute("idClient") : "" %>">
+    </div>
+    <div class="form-group">
+        <label for="idChambre">Id de la chambre</label>
+        <input class="form-control" type="TEXT" name="idChambre" value="<%= request.getAttribute("idChambre") != null ? (String)request.getAttribute("idChambre") : "" %>">
+    </div>
+    <div class="form-group">
+        <label for="debut">Date de début</label>
+        <input class="form-control" type="DATE" name="debut" value="<%= request.getAttribute("debut") != null ? (String)request.getAttribute("debut") : "" %>">
+    </div>
+    <div class="form-group">
+        <label for="fin">Date de fin</label>
+        <input class="form-control" type="DATE" name="fin" value="<%= request.getAttribute("fin") != null ? (String)request.getAttribute("fin") : "" %>">
+    </div>
+    <input class="btn btn-primary" type="SUBMIT" name="inscrire" value="Réserver une chambre">
+</form>
 <br>
 <br>
     <jsp:include page="/WEB-INF/messageErreur.jsp" />

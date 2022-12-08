@@ -3,7 +3,12 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
+
 import utilities.GestionAubergeInn;
+import utilities.IFT287Exception;
+
 @WebServlet(name = "enleverCommodite", value = "/enleverCommodite")
 public class EnleverCommodite extends HttpServlet{
     @Override
@@ -14,9 +19,36 @@ public class EnleverCommodite extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        GestionAubergeInn gestion = (GestionAubergeInn)  request.getSession().getAttribute("gestion");
-        int idChambre = (int)request.getAttribute("idChambre");
-        int idCommodite = (int)request.getAttribute("idCommodite");
-        //gestion.transactionCommoditechambre().enleverCommodite(idChambre, idCommodite);
+        try{
+
+            HttpSession session = request.getSession();
+            AubergInnHelper.creerGestionnaire(getServletContext(), session);
+
+
+            String idChambre = request.getParameter("idChambre");
+            if(idChambre == null || idChambre == ""){
+                throw new IFT287Exception("Le idChambre ne peux pas être vide");
+            }
+            String idCommodite = request.getParameter("idCommodite");
+            if(idCommodite == null || idCommodite == ""){
+                throw new IFT287Exception("Le idCommodite ne peux pas être vide");
+            }
+
+            GestionAubergeInn gestion = (GestionAubergeInn) request.getSession().getAttribute("gestion");
+            gestion.transactionCommoditechambre().enleverCommodite(Integer.parseInt(idChambre), Integer.parseInt(idCommodite));
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/afficherChambre.jsp");
+            dispatcher.forward(request, response);
+        }
+        catch (Exception e)
+        {
+            List<String> listeMessageErreur = new LinkedList<String>();
+            listeMessageErreur.add(e.getMessage());
+            request.setAttribute("listeMessageErreur", listeMessageErreur);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/afficherChambre.jsp");
+            dispatcher.forward(request, response);
+            // pour d�boggage seulement : afficher tout le contenu de l'exception
+            e.printStackTrace();
+        }
     }
 }

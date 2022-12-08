@@ -7,6 +7,8 @@ import java.sql.Date;
 
 import utilities.Connexion;
 
+import static java.lang.System.currentTimeMillis;
+
 public class GestionnaireReservation{
     private final Connexion connexion;
 
@@ -32,6 +34,9 @@ public class GestionnaireReservation{
         ResultSet rset = stmtPeutReserver.executeQuery();
         boolean peutReserver = !rset.next();//S'il y a des réservations dans la plage horaire ->ne peut pas réserver
         rset.close();
+        if(dateDebut.compareTo(new Date(currentTimeMillis())) < 0){
+            peutReserver = false;
+        }
         return peutReserver;
     }
 

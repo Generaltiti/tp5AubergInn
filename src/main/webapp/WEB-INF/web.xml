@@ -31,4 +31,44 @@
         <servlet-name>AjouterCommodite</servlet-name>
         <url-pattern>/AjouterCommodite</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>SupprimerClient</servlet-name>
+        <servlet-class>com.example.tp5.SupprimerClient</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupprimerClient</servlet-name>
+        <url-pattern>/SupprimerClient</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>SupprimerChambre</servlet-name>
+        <servlet-class>com.example.tp5.SupprimerChambre</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SupprimerChambre</servlet-name>
+        <url-pattern>/SupprimerChambre</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Reserver</servlet-name>
+        <servlet-class>com.example.tp5.Reserver</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Reserver</servlet-name>
+        <url-pattern>/Reserver</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>InclureCommodite</servlet-name>
+        <servlet-class>com.example.tp5.InclureCommodite</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InclureCommodite</servlet-name>
+        <url-pattern>/InclureCommodite</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>EnleverCommodite</servlet-name>
+        <servlet-class>com.example.tp5.EnleverCommodite</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EnleverCommodite</servlet-name>
+        <url-pattern>/EnleverCommodite</url-pattern>
+    </servlet-mapping>
 </web-app>
