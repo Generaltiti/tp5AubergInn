@@ -1,3 +1,5 @@
+package utilities;
+
 /**
  * L'exception IFT287Exception est levee lorsqu'une transaction est inadequate.
  */

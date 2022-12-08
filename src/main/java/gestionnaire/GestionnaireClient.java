@@ -5,8 +5,8 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
-import AubergeInn.Connexion;
-import AubergeInn.tuples.TupleClientReservations;
+import utilities.Connexion;
+import tuples.TupleClientReservations;
 
 public class GestionnaireClient{
     private final PreparedStatement stmtAjouterClient;

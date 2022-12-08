@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Date;
 
-import AubergeInn.Connexion;
+import utilities.Connexion;
 
 public class GestionnaireReservation{
     private final Connexion connexion;

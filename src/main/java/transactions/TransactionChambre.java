@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import AubergeInn.Connexion;
-import AubergeInn.IFT287Exception;
-import AubergeInn.gestionnaire.GestionnaireChambre;
-import AubergeInn.gestionnaire.GestionnaireClient;
-import AubergeInn.tuples.TupleChambre;
-import AubergeInn.tuples.TupleClientReservations;
-import AubergeInn.tuples.TupleCommodite;
+import utilities.Connexion;
+import utilities.IFT287Exception;
+import gestionnaire.GestionnaireChambre;
+import gestionnaire.GestionnaireClient;
+import tuples.TupleChambre;
+import tuples.TupleClientReservations;
+import tuples.TupleCommodite;
 
 public class TransactionChambre {
     private final GestionnaireChambre chambre;

@@ -1,15 +1,17 @@
+package utilities;
+
 import java.sql.SQLException;
 
-import AubergeInn.gestionnaire.GestionnaireChambre;
-import AubergeInn.gestionnaire.GestionnaireClient;
-import AubergeInn.gestionnaire.GestionnaireCommodite;
-import AubergeInn.gestionnaire.GestionnaireCommoditeChambre;
-import AubergeInn.gestionnaire.GestionnaireReservation;
-import AubergeInn.transactions.TransactionChambre;
-import AubergeInn.transactions.TransactionClient;
-import AubergeInn.transactions.TransactionCommodite;
-import AubergeInn.transactions.TransactionCommoditeChambre;
-import AubergeInn.transactions.TransactionReservation;
+import gestionnaire.GestionnaireChambre;
+import gestionnaire.GestionnaireClient;
+import gestionnaire.GestionnaireCommodite;
+import gestionnaire.GestionnaireCommoditeChambre;
+import gestionnaire.GestionnaireReservation;
+import transactions.TransactionChambre;
+import transactions.TransactionClient;
+import transactions.TransactionCommodite;
+import transactions.TransactionCommoditeChambre;
+import transactions.TransactionReservation;
 
 public class GestionAubergeInn {
     private final Connexion connexion;

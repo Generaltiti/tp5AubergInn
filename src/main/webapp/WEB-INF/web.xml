@@ -3,4 +3,32 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
+    <listener>
+        <listener-class>com.example.tp5.AubergInnContextListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>CreerClient</servlet-name>
+        <servlet-class>com.example.tp5.CreerClient</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreerClient</servlet-name>
+        <url-pattern>/CreerClient</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AjouterChambre</servlet-name>
+        <servlet-class>com.example.tp5.AjouterChambre</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjouterChambre</servlet-name>
+        <url-pattern>/AjouterChambre</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AjouterCommodite</servlet-name>
+        <servlet-class>com.example.tp5.AjouterCommodite</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AjouterCommodite</servlet-name>
+        <url-pattern>/AjouterCommodite</url-pattern>
+    </servlet-mapping>
 </web-app>

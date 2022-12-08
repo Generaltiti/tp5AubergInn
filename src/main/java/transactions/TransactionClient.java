@@ -3,10 +3,10 @@ package transactions;
 import java.sql.SQLException;
 import java.util.List;
 
-import AubergeInn.Connexion;
-import AubergeInn.IFT287Exception;
-import AubergeInn.gestionnaire.GestionnaireClient;
-import AubergeInn.tuples.TupleClientReservations;
+import utilities.Connexion;
+import utilities.IFT287Exception;
+import gestionnaire.GestionnaireClient;
+import tuples.TupleClientReservations;
 
 public class TransactionClient {
     private final GestionnaireClient client;

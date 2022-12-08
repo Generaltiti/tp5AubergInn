@@ -2,9 +2,9 @@ package transactions;
 
 import java.sql.SQLException;
 
-import AubergeInn.Connexion;
-import AubergeInn.IFT287Exception;
-import AubergeInn.gestionnaire.GestionnaireCommodite;
+import utilities.Connexion;
+import utilities.IFT287Exception;
+import gestionnaire.GestionnaireCommodite;
 
 public class TransactionCommodite {
     private final GestionnaireCommodite commodites;

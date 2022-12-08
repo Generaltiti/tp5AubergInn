@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import AubergeInn.Connexion;
-import AubergeInn.tuples.TupleCommodite;
-import AubergeInn.tuples.TupleChambre;
+import utilities.Connexion;
+import tuples.TupleCommodite;
+import tuples.TupleChambre;
 
 public class GestionnaireChambre{
     private final PreparedStatement stmtajouterChambre;

@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import AubergeInn.Connexion;
+import utilities.Connexion;
 
 public class GestionnaireCommodite{
     private final Connexion connexion;

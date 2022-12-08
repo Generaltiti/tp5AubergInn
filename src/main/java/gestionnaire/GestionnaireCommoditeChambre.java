@@ -3,7 +3,7 @@ package gestionnaire;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import AubergeInn.Connexion;
+import utilities.Connexion;
 
 public class GestionnaireCommoditeChambre{
     private final PreparedStatement inclureCommodite;

@@ -4,13 +4,13 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
-import AubergeInn.Connexion;
-import AubergeInn.IFT287Exception;
-import AubergeInn.gestionnaire.GestionnaireChambre;
-import AubergeInn.gestionnaire.GestionnaireClient;
-import AubergeInn.gestionnaire.GestionnaireCommodite;
-import AubergeInn.gestionnaire.GestionnaireCommoditeChambre;
-import AubergeInn.tuples.TupleClientReservations;
+import utilities.Connexion;
+import utilities.IFT287Exception;
+import gestionnaire.GestionnaireChambre;
+import gestionnaire.GestionnaireClient;
+import gestionnaire.GestionnaireCommodite;
+import gestionnaire.GestionnaireCommoditeChambre;
+import tuples.TupleClientReservations;
 
 public class TransactionCommoditeChambre {
     private final GestionnaireCommoditeChambre commoditechambre;

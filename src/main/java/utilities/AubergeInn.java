@@ -1,4 +1,4 @@
-// Travail fait par :
+package utilities;// Travail fait par :
 //   NomEquipier1 - Matricule
 //   NomEquipier2 - Matricule
 
@@ -6,9 +6,9 @@ import java.io.*;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import AubergeInn.tuples.TupleChambre;
-import AubergeInn.tuples.TupleClientReservations;
-import AubergeInn.tuples.TupleCommodite;
+import tuples.TupleChambre;
+import tuples.TupleClientReservations;
+import tuples.TupleCommodite;
 
 import java.sql.*;
 
@@ -149,7 +149,7 @@ public class AubergeInn
                     String description = readString(tokenizer);
                     float surplus = (float) readDouble(tokenizer);
                     
-                    gestionAuberge.transactionCommodites().ajouterCommodite(idCommodite, surplus, description);
+
                     System.out.println("\n Commodite ajoutee.");
                 }
                 else if (command.equals("inclureCommodite"))
@@ -164,6 +164,7 @@ public class AubergeInn
                     int idChambre = readInt(tokenizer);
                     int idCommodite = readInt(tokenizer);
                     gestionAuberge.transactionCommoditechambre().enleverCommodite(idChambre, idCommodite);
+
                     
                     System.out.println("\n Commodite enlevee.");
 
@@ -180,11 +181,11 @@ public class AubergeInn
                 else if (command.equals("afficherClient"))
                 {
                     int idClient = readInt(tokenizer);
-                    List<TupleClientReservations> clients = gestionAuberge.transactionClient().afficherClient(idClient);
-                    for(TupleClientReservations tuple : clients){
-                        System.out.println("\n"+tuple.getPrenom() + " " + tuple.getNom() + " " + tuple.getAge() + " " + tuple.getDateDebut() + " "
-                        + tuple.getDateFin() + " " + tuple.getNomDeLachambre() + " " + tuple.getTypeDeLit() + " " + tuple.getPrixReservation());
-                    }
+                List<TupleClientReservations> clients = gestionAuberge.transactionClient().afficherClient(idClient);
+                for(TupleClientReservations tuple : clients){
+                    System.out.println("\n"+tuple.getPrenom() + " " + tuple.getNom() + " " + tuple.getAge() + " " + tuple.getDateDebut() + " "
+                    + tuple.getDateFin() + " " + tuple.getNomDeLachambre() + " " + tuple.getTypeDeLit() + " " + tuple.getPrixReservation());
+                }
                 }
                 else if (command.equals("afficherChambre"))
                 {

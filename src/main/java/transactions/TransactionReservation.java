@@ -3,11 +3,11 @@ package transactions;
 import java.sql.Date;
 import java.sql.SQLException;
 
-import AubergeInn.Connexion;
-import AubergeInn.IFT287Exception;
-import AubergeInn.gestionnaire.GestionnaireChambre;
-import AubergeInn.gestionnaire.GestionnaireClient;
-import AubergeInn.gestionnaire.GestionnaireReservation;
+import utilities.Connexion;
+import utilities.IFT287Exception;
+import gestionnaire.GestionnaireChambre;
+import gestionnaire.GestionnaireClient;
+import gestionnaire.GestionnaireReservation;
 
 public class TransactionReservation {
     private final GestionnaireClient client;
