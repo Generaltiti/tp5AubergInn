@@ -17,11 +17,29 @@ public class AfficherChambresLibres extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*GestionAubergeInn gestion = (GestionAubergeInn)  request.getSession().getAttribute("gestion");
-        List<TupleChambre> liste = gestion.transactionChambre().ChambresLibres();
-        System.out.println();
-        for(TupleChambre c:liste) {
-            System.out.println(c.toString());
-        }*/
+        try {
+            HttpSession session = request.getSession();
+            AubergInnHelper.creerGestionnaire(getServletContext(), session);
+
+
+            GestionAubergeInn gestion = (GestionAubergeInn) request.getSession().getAttribute("gestion");
+            List<TupleChambre> chambres = gestion.transactionChambre().ChambresLibres();
+
+            String alltable = "";
+
+            for(TupleChambre tuple : chambres){
+                alltable = alltable + "<tr>";
+                alltable = alltable + "<td>"+tuple.id+"</td>";
+                alltable = alltable + "<td>"+tuple.nom+"</td>";
+                alltable = alltable + "<td>"+tuple.type+"</td>";
+                alltable = alltable + "<td>"+tuple.prix+"</td>";
+                alltable = alltable + "</tr>";
+            }
+            request.setAttribute("tableChambresLibres",alltable);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/afficherChambre.jsp");
+            dispatcher.forward(request, response);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

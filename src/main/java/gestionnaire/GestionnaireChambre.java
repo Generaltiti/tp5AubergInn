@@ -33,7 +33,7 @@ public class GestionnaireChambre{
             "DELETE FROM Chambre WHERE idchambre = ?"
         );
         stmtafficherChambresLibres = conn.getConnection().prepareStatement(
-                "SELECT idChambre , NomDeLaChambre, TypeDeLit, PrixDeBase+sum(commodite.surplus_prix) AS Prix FROM Chambre NATURAL JOIN CommoditeChambre NATURAL JOIN Commodite WHERE (SELECT Count(*) FROM reservation WHERE NOW() < DateFin) = 0 GROUP BY idChambre"
+                "SELECT idChambre , NomDeLaChambre, TypeDeLit, PrixDeBase FROM Chambre"
         );
         stmtafficherChambre = conn.getConnection().prepareStatement(
             "SELECT IDChambre, NomDeLaChambre, TypeDeLit, PrixDeBase FROM Chambre WHERE IdChambre = ?"
@@ -132,9 +132,14 @@ public class GestionnaireChambre{
             int Id = rset.getInt("IdChambre");
             String NomDeLaChambre = rset.getString("NomDeLaChambre");
             String TypeDeLit = rset.getString("TypeDeLit");
-            float Prix = rset.getFloat("Prix");           
+            float Prix = rset.getFloat("PrixDeBase");
+            for(TupleCommodite commo: commoditeincluses(Id)){
+                Prix += commo.Surplus_prix;
+            }
             TupleChambre chambre = new TupleChambre(Id,NomDeLaChambre,TypeDeLit,Prix);
-            returnlist.add(chambre);
+            if(reservationsfutures(Id) == 0){
+                returnlist.add(chambre);
+            }
         }
         rset.close();
         return returnlist;
